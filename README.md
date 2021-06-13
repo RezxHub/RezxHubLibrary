@@ -249,7 +249,7 @@ function library:NewWindow(RezxHub)
 		TabName.Size = UDim2.new(0, 49, 0, 21)
 		TabName.Font = Enum.Font.Sarpanch
 		TabName.Text = name
-		TabName.TextColor3 = Color3.fromRGB(90,90,90)
+		TabName.TextColor3 = Color3.fromRGB(150,150,150)
 		TabName.TextSize = 14.000
 
 		Underline.Name = "Underline"
@@ -286,7 +286,7 @@ function library:NewWindow(RezxHub)
 			for i,v in pairs(SectionTab:GetChildren()) do
 				if v.Name:find("Tab") then 
 					tween:Create(v.Underline,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{Size = UDim2.new(0, 0, 0, 1)}):Play()
-					tween:Create(v,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{TextColor3 = Color3.fromRGB(90,90,90)}):Play()						
+					tween:Create(v,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{TextColor3 = Color3.fromRGB(150,150,150)}):Play()						
 					library.currenttab = tostring(name)
 					local a = math.random(1,5)
 				end
