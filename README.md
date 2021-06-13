@@ -327,7 +327,7 @@ function lib:Window(text, preset, closebind)
 		TabBtn.Font = Enum.Font.Sarpanch
 		TabBtn.Text = ""
 		TabBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-		TabBtn.TextSize = 20.000
+		TabBtn.TextSize = 16.000
 
 		TabTitle.Name = "TabTitle"
 		TabTitle.Parent = TabBtn
@@ -337,7 +337,7 @@ function lib:Window(text, preset, closebind)
 		TabTitle.Font = Enum.Font.Sarpanch
 		TabTitle.Text = text
 		TabTitle.TextColor3 = Color3.fromRGB(150, 150, 150)
-		TabTitle.TextSize = 20.000
+		TabTitle.TextSize = 16.000
 		TabTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 		TabBtnIndicator.Name = "TabBtnIndicator"
