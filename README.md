@@ -973,7 +973,7 @@ function library:NewWindow(RezxHub)
 					tween:Create(DropListBtn,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{BackgroundColor3 = Color3.fromRGB(50,50,50)}):Play()
 				end
 				local function fadeoff()
-					tween:Create(DropListBtn,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{BackgroundColor3 = Color3.fromRGB(0,0,0)}):Play()
+					tween:Create(DropListBtn,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
 				end
 				DropListBtn.MouseEnter:Connect(fadeon)
 				DropListBtn.MouseLeave:Connect(fadeoff)
