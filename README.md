@@ -551,7 +551,7 @@ function library:NewWindow(RezxHub)
 			DropdownToggle.AutoButtonColor = false
 			DropdownToggle.Font = Enum.Font.Sarpanch
 			DropdownToggle.Text = name 
-			DropdownToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+			DropdownToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 			DropdownToggle.TextSize = 14.000
 			DropRound.CornerRadius = UDim.new(0.150000006, 0)
 			DropRound.Name = "DropRound"
