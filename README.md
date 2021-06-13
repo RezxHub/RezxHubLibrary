@@ -1068,7 +1068,7 @@ function library:NewWindow(RezxHub)
 
 			H1Text.Name = "H1Text"
 			H1Text.Parent = Line
-			H1Text.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+			H1Text.BackgroundColor3 = Color3.fromRGB(150,150,150)
 			H1Text.Position = UDim2.new(0.39, 0,-4.833, 0)
 			H1Text.Size = UDim2.new(0, 103, 0, 20)
 			H1Text.Font = Enum.Font.Sarpanch
