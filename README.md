@@ -1,5 +1,5 @@
 
-local maincolor = Color3.fromRGB(255,163,26)
+local maincolor = Color3.fromRGB(25, 25, 25)
 local firstpage = '' 
 local old = game.CoreGui:FindFirstChild('ScreenGui') 
 if old  then 
@@ -772,7 +772,7 @@ function library:NewWindow(RezxHub)
 
 			SliderBackground.Name = "SliderBackground"
 			SliderBackground.Parent = NewSlider
-			SliderBackground.BackgroundColor3 = Color3.fromRGB(49, 62, 71)
+			SliderBackground.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 			SliderBackground.Position = UDim2.new(0.725247502, 0, 0.380952388, 0)
 			SliderBackground.Size = UDim2.new(0, 95, 0, 4)
 
