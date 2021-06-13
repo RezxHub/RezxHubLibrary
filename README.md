@@ -5,7 +5,7 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
-local CloseBind = Enum.KeyCode.RightControl
+local CloseBind = Enum.KeyCode.Insert
 
 local ui = Instance.new("ScreenGui")
 ui.Name = "RezxHub"
@@ -86,7 +86,7 @@ local function MakeDraggable(topbarobject, object)
 end
 
 function lib:Window(text, preset, closebind)
-	CloseBind = closebind or Enum.KeyCode.RightControl
+	CloseBind = closebind or Enum.KeyCode.Insert
 	PresetColor = preset or Color3.fromRGB(44, 120, 224)
 	fs = false
 	local Main = Instance.new("Frame")
@@ -148,7 +148,7 @@ function lib:Window(text, preset, closebind)
 					Main:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
 					uitoggled = true
 					wait(.5)
-					knixhub.Enabled = false
+					ui.Enabled = false
 				else
 					Main:TweenSize(
 						UDim2.new(0, 560, 0, 319),
@@ -157,7 +157,7 @@ function lib:Window(text, preset, closebind)
 						.6,
 						true
 					)
-					knixhub.Enabled = true
+					ui.Enabled = true
 					uitoggled = false
 				end
 			end
