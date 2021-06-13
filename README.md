@@ -4,7 +4,7 @@ local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
-local PresetColor = Color3.fromRGB(44, 120, 224)
+local PresetColor = Color3.fromRGB(170, 85, 255)
 local CloseBind = Enum.KeyCode.Insert
 
 local ui = Instance.new("ScreenGui")
