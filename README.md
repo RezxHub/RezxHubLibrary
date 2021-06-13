@@ -127,7 +127,7 @@ function lib:Window(text, preset, closebind)
 	Title.Font = Enum.Font.Sarpanch
 	Title.Text = text
 	Title.TextColor3 = Color3.fromRGB(68, 68, 68)
-	Title.TextSize = 12.000
+	Title.TextSize = 16.000
 	Title.TextXAlignment = Enum.TextXAlignment.Left
 
 	DragFrame.Name = "DragFrame"
