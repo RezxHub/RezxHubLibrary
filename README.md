@@ -620,7 +620,7 @@ function library:NewWindow(RezxHub)
 					tween:Create(DropRefresh,TweenInfo.new(0.1,Enum.EasingStyle.Sine),{ImageTransparency  = 1}):Play()
 					tog = true 
 
-					tween:Create(DropToggleIcon,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{Rotation  = 180 ,ImageColor3 = Color3.fromRGB(255,255,255)}):Play()
+					tween:Create(DropToggleIcon,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{Rotation  = 180 ,ImageColor3 = Color3.fromRGB(50,50,50)}):Play()
 					DropList.Visible = true 
 					tween:Create(DropList,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{
 						Size = UDim2.new(0, 404, 0, 56)
@@ -635,7 +635,7 @@ function library:NewWindow(RezxHub)
 				local UICorner = Instance.new("UICorner")
 				DropListBtn.Name = "DropListBtn"
 				DropListBtn.Parent = DropList
-				DropListBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+				DropListBtn.BackgroundColor3 = Color3.fromRGB(50,50,50)
 				DropListBtn.Size = UDim2.new(0, 398,0, 17)
 				DropListBtn.ZIndex = 1
 				DropListBtn.AutoButtonColor = false
@@ -653,7 +653,7 @@ function library:NewWindow(RezxHub)
 					tween:Create(DropListBtn,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{BackgroundColor3 = Color3.fromRGB(50,50,50)}):Play()
 				end
 				local function fadeoff()
-					tween:Create(DropListBtn,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+					tween:Create(DropListBtn,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{BackgroundColor3 = Color3.fromRGB(50,50,50)}):Play()
 				end
 				DropListBtn.MouseEnter:Connect(fadeon)
 				DropListBtn.MouseLeave:Connect(fadeoff)
@@ -930,6 +930,7 @@ function library:NewWindow(RezxHub)
 			NewToggle.MouseLeave:Connect(fadeoff)
 			Toggle.MouseButton1Click:Connect(toggle)
 			NewToggle.MouseButton1Click:Connect(toggle) 
+			
 			-- Additional Function 
 			function togfunc:Set(a)
 				Toggle.Image = (a == true and "http://www.roblox.com/asset/?id=6031068421" or "http://www.roblox.com/asset/?id=6031068420" )
