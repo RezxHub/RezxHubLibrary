@@ -12,6 +12,10 @@ RezxLib.Name = "RezxHub"
 RezxLib.Parent = game.CoreGui
 RezxLib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+if game.CoreGui:FindFirstChild("RezxHub") then
+	game.CoreGui:FindFirstChild("RezxHub"):Destroy()
+end
+
 coroutine.wrap(
 	function()
 		while wait() do
