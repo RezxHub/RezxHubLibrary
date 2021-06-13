@@ -19,17 +19,7 @@ coroutine.wrap(function()
 		end
 	end
 end)()
-local busy = false
-local textlist = {
-	[1] = 'Search Something :)',
-	[2] = 'Got any question?',
-	[3] = 'Search...',
-	[4] = "Miss something?",
-	[5] = 'too much button?',
-}
-local function gettext(a)
-	return textlist[a] 
-end
+
 local function dragify(Frame)
 	dragToggle = nil
 	dragSpeed = 2 
@@ -115,9 +105,6 @@ function library:NewWindow(RezxHub)
 	local Close = Instance.new("ImageButton")
 	local SectionTab = Instance.new("Frame")
 	local Section_List = Instance.new("UIListLayout")
-	local Search = Instance.new("ImageButton")
-	local SearchRound = Instance.new("UICorner")
-	local Searchbar = Instance.new("TextBox")
 	local Hub = Instance.new("TextLabel")
 	local UICorner_10 = Instance.new("UICorner")
 	local Porn = Instance.new("TextLabel")
@@ -189,50 +176,7 @@ function library:NewWindow(RezxHub)
 		tween:Create(Close,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{ImageColor3 = Color3.fromRGB(245, 245, 245)}):Play()
 	end)
 	local UICorner_9 = Instance.new("UICorner")
-	Search.Name = "Search"
-	Search.Parent = MainWindow
-	Search.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Search.BackgroundTransparency = 1
-	Search.Position = UDim2.new(0.86578095, 0, 0.0283687934, 0)
-	Search.Size = UDim2.new(0, 21, 0, 21)
-	Search.Image = "rbxassetid://3605509925"
-	Search.ImageColor3 = maincolor
-	Search.ScaleType = Enum.ScaleType.Fit
-	Search.AutoButtonColor = false 
-	local tog = false 
-	Search.MouseLeave:Connect(function()
-		if tog then return end 
-		tween:Create(Search,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{ImageColor3 = maincolor}):Play()
-	end)
-	Search.MouseEnter:Connect(function()
-		tween:Create(Search,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{ImageColor3 = Color3.fromRGB(255, 255, 255)}):Play()
-	end)
-	SearchRound.CornerRadius = UDim.new(0.5, 0)
-	SearchRound.Name = "SearchRound"
-	SearchRound.Parent = Search
-	Searchbar.Name = "Searchbar"
-	Searchbar.Parent = MainWindow
-	Searchbar.BackgroundColor3 = Color3.fromRGB(49, 62, 71)
-	Searchbar.BorderSizePixel = 0
-	Searchbar.Position = UDim2.new(0.86, 0, 0.0283687934, 0)
-	Searchbar.Size = UDim2.new(0, 0, 0, 21)
-	Searchbar.Font = Enum.Font.Sarpanch
-	Searchbar.PlaceholderText = "Search..."
-	Searchbar.Text = ""
-	Searchbar.TextColor3 = maincolor
-	Searchbar.TextSize = 14.000
-	Searchbar.Visible = true 
-	Searchbar.ClipsDescendants = true 
-	UICorner_9.CornerRadius = UDim.new(0.5, 0)
-	UICorner_9.Parent = Searchbar
-	function  filter(v)
-		if  v.Name:find("Toggle") or v.Name:find('Button') or v.Name:find("Box") or v.Name:find("Text") or v.Name:find("Bar") and not (v:IsA("Frame") or v:IsA("UIListLayout")) then 
-			return true 
-		else 
-			return false 
-		end 
-	end
-
+	
 	local function showall()
 		for i, v in next,PageFoler[library.currenttab]:GetChildren() do
 			if filter(v) then
@@ -240,38 +184,7 @@ function library:NewWindow(RezxHub)
 			end
 		end
 	end
-	Searchbar:GetPropertyChangedSignal("Text"):Connect(function()
-		local text = Searchbar.Text:lower()
-		if text ~= '' then
-			for i, v in next,PageFoler[library.currenttab]:GetChildren() do
-				if filter(v) then
-					if  v.Text:lower():find(text) then
-						v.Visible = true 
-					else 
-						v.Visible = false
-					end 
-				end
-			end
-		else 
-			showall()
-		end
-	end)
-
-	local og = Search.Image
-	Search.MouseButton1Click:Connect(function()
-		if tog == false then 
-			tog = true 
-			tween:Create(Searchbar,TweenInfo.new(0.2),{Size = UDim2.new(0, -263, 0, 21)}):Play()
-			tween:Create(Search,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{Rotation = Search.Rotation +  360,ImageColor3 = Color3.fromRGB(255,255,255)}):Play()
-			Search.Image  = 'http://www.roblox.com/asset/?id=6031260783'
-		else 
-			showall()
-			tog = false 
-			tween:Create(Searchbar,TweenInfo.new(0.2),{Size = UDim2.new(0, 0, 0, 21)}):Play()
-			tween:Create(Search,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{Rotation = Search.Rotation -  360,ImageColor3 = maincolor}):Play()
-			Search.Image = og 
-		end
-	end)
+	
 	UICorner_10.CornerRadius = UDim.new(0.150000006, 0)
 	UICorner_10.Parent = Hub
 	Porn.Name = "Rezx"
@@ -374,10 +287,8 @@ function library:NewWindow(RezxHub)
 				if v.Name:find("Tab") then 
 					tween:Create(v.Underline,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{Size = UDim2.new(0, 0, 0, 1)}):Play()
 					tween:Create(v,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{TextColor3 = Color3.fromRGB(90,90,90)}):Play()						
-					Searchbar.Text = ''
 					library.currenttab = tostring(name)
 					local a = math.random(1,5)
-					Searchbar.PlaceholderText = gettext(a)
 				end
 			end
 			tween:Create(Underline,TweenInfo.new(0.2,Enum.EasingStyle.Sine),{Size = UDim2.new(0, 49, 0, 1)}):Play()
